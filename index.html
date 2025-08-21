@@ -11,7 +11,8 @@
 </head>
 
 <body class="font-inter">
-    <header id="navbar" class="navbar flex items-center justify-between py-4 px-15 shadow-sm">
+    <header id="navbar"
+        class="navbar flex items-center justify-between py-4 px-15 shadow-sm sticky top-0 bg-white z-50">
         <div class="navbar-brand flex items-center">
             <img src="assets/images/storify-logo.png" alt="Storify Logo" class="h-11 w-auto">
         </div>
@@ -60,6 +61,357 @@
             </div>
         </div>
     </section>
+
+    <section class="features py-16 bg-gray-50">
+        <div class="container mx-auto px-6 md:px-15">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold font-poppins text-primary mb-3">Why Choose Storify</h2>
+                <p class="text-lg text-foreground max-w-2xl mx-auto">Our marketplace offers unique benefits that make
+                    your shopping experience better.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="icon-container mb-4 text-primary text-4xl">
+                        <i class="bx bx-check-shield"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Secure Transactions</h3>
+                    <p class="text-foreground">All purchases are protected with end-to-end encryption and our buyer
+                        protection program.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="icon-container mb-4 text-primary text-4xl">
+                        <i class="bx bx-star"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Verified Sellers</h3>
+                    <p class="text-foreground">Every seller on our platform is carefully vetted to ensure quality
+                        products and service.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="icon-container mb-4 text-primary text-4xl">
+                        <i class="bx bx-package"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Fast Delivery</h3>
+                    <p class="text-foreground">Get your products delivered quickly with our optimized logistics network
+                        and tracking system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="popular-products py-16">
+        <div class="container mx-auto px-6 md:px-15">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold font-poppins text-primary mb-3">Popular Products</h2>
+                <p class="text-lg text-foreground max-w-2xl mx-auto">Browse our best-selling items loved by thousands of
+                    customers</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Product Card 1 -->
+                <div
+                    class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div class="product-image relative">
+                        <div class="bg-gray-200 h-48 flex items-center justify-center">
+                            <i class="bx bx-image text-5xl text-gray-400"></i>
+                        </div>
+                        <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">New</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-1">Wireless Earbuds</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                            </div>
+                            <span class="text-xs ml-1 text-gray-500">(24)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$49.99</span>
+                            <button
+                                class="text-primary hover:text-white hover:bg-primary p-1.5 rounded-full transition-colors">
+                                <i class="bx bx-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div
+                    class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div class="product-image relative">
+                        <div class="bg-gray-200 h-48 flex items-center justify-center">
+                            <i class="bx bx-image text-5xl text-gray-400"></i>
+                        </div>
+                        <div class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded">Sale</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-1">Smart Watch</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                            </div>
+                            <span class="text-xs ml-1 text-gray-500">(42)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-primary font-bold">$89.99</span>
+                                <span class="text-xs text-gray-500 line-through ml-1">$129.99</span>
+                            </div>
+                            <button
+                                class="text-primary hover:text-white hover:bg-primary p-1.5 rounded-full transition-colors">
+                                <i class="bx bx-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div
+                    class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div class="product-image relative">
+                        <div class="bg-gray-200 h-48 flex items-center justify-center">
+                            <i class="bx bx-image text-5xl text-gray-400"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-1">Portable Charger</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bx-star"></i>
+                            </div>
+                            <span class="text-xs ml-1 text-gray-500">(18)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$29.99</span>
+                            <button
+                                class="text-primary hover:text-white hover:bg-primary p-1.5 rounded-full transition-colors">
+                                <i class="bx bx-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div
+                    class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div class="product-image relative">
+                        <div class="bg-gray-200 h-48 flex items-center justify-center">
+                            <i class="bx bx-image text-5xl text-gray-400"></i>
+                        </div>
+                        <div class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded">Bestseller
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-1">Bluetooth Speaker</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                                <i class="bx bx-star"></i>
+                            </div>
+                            <span class="text-xs ml-1 text-gray-500">(36)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$59.99</span>
+                            <button
+                                class="text-primary hover:text-white hover:bg-primary p-1.5 rounded-full transition-colors">
+                                <i class="bx bx-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="#"
+                    class="inline-block py-2 px-6 bg-primary text-white rounded-md hover:bg-secondary transition-colors">View
+                    All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials py-16 bg-gray-50">
+        <div class="container mx-auto px-6 md:px-15">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold font-poppins text-primary mb-3">What Our Customers Say</h2>
+                <p class="text-lg text-foreground max-w-2xl mx-auto">Hear from people who love shopping with Storify</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                    </div>
+                    <p class="text-foreground mb-4 italic">"I've been shopping on Storify for over a year now and I'm
+                        consistently impressed by the quality of products and customer service. The delivery is always
+                        on time!"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                            <i class="bx bx-user text-gray-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Sarah Johnson</h4>
+                            <p class="text-sm text-gray-500">Loyal Customer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star-half"></i>
+                    </div>
+                    <p class="text-foreground mb-4 italic">"The variety of products available on Storify is amazing. I
+                        found items here that I couldn't find anywhere else. The secure payment system gives me peace of
+                        mind."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                            <i class="bx bx-user text-gray-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Michael Chen</h4>
+                            <p class="text-sm text-gray-500">Tech Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                    </div>
+                    <p class="text-foreground mb-4 italic">"As a small business owner, I appreciate how Storify makes it
+                        easy to find quality products at competitive prices. Their customer support team is responsive
+                        and helpful!"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
+                            <i class="bx bx-user text-gray-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Emma Rodriguez</h4>
+                            <p class="text-sm text-gray-500">Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-6 md:px-15">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="footer-column">
+                    <div class="mb-4">
+                        <img src="assets/images/storify-logo.png" alt="Storify Logo"
+                            class="h-10 w-auto brightness-0 invert">
+                    </div>
+                    <p class="text-sm mb-4 text-gray-300">Storify is your trusted digital marketplace connecting buyers
+                        with verified sellers offering unique and high-quality products.</p>
+                    <div class="social-links flex space-x-3">
+                        <a href="#" class="bg-white bg-opacity-20 flex items-center justify-center rounded-full p-2 hover:bg-opacity-30 transition-all">
+                            <i class="bxl bx-facebook text-xl text-black"></i>
+                        </a>
+                        <a href="#" class="bg-white bg-opacity-20 flex items-center justify-center rounded-full p-2 hover:bg-opacity-30 transition-all">
+                            <i class="bxl bx-twitter-x text-xl text-black"></i>
+                        </a>
+                        <a href="#" class="bg-white bg-opacity-20 flex items-center justify-center rounded-full p-2 hover:bg-opacity-30 transition-all">
+                            <i class="bxl bx-instagram text-xl text-black"></i>
+                        </a>
+                        <a href="#" class="bg-white bg-opacity-20 flex items-center justify-center rounded-full p-2 hover:bg-opacity-30 transition-all">
+                            <i class="bxl bx-linkedin text-xl text-black"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Categories</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Deals</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Support -->
+                <div class="footer-column">
+                    <h4 class="font-semibold text-lg mb-4">Customer Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Shipping Policy</a>
+                        </li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Returns & Refunds</a>
+                        </li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Payment Methods</a>
+                        </li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Terms & Conditions</a>
+                        </li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-column">
+                    <h4 class="font-semibold text-lg mb-4">Subscribe to Our Newsletter</h4>
+                    <p class="text-sm mb-4 text-gray-300">Stay updated with our latest products and offers.</p>
+                    <form class="flex flex-col space-y-2">
+                        <input type="email" placeholder="Your Email Address"
+                            class="px-4 py-2 border border-slate-300 rounded-md text-foreground focus:outline-none">
+                        <button type="submit"
+                            class="bg-secondary hover:bg-opacity-80 py-2 rounded-md transition-colors">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-white border-opacity-20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-sm text-gray-300 mb-4 md:mb-0">
+                    © 2025 Storify. All rights reserved.
+                </div>
+                <div class="flex space-x-4">
+                    <i class="bxl bx-visa text-3xl"></i>
+                    <i class="bxl bx-mastercard text-3xl"></i>
+                    <i class="bxl bx-paypal text-3xl"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
