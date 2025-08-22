@@ -12,32 +12,90 @@
 
 <body class="font-inter">
     <header id="navbar"
-        class="navbar flex items-center justify-between py-4 px-15 shadow-sm sticky top-0 bg-white z-50">
+        class="navbar flex items-center justify-between py-4 md:px-15 px-5 shadow-sm sticky top-0 bg-white z-50">
         <div class="navbar-brand flex items-center">
             <img src="assets/images/storify-logo.png" alt="Storify Logo" class="h-11 w-auto">
         </div>
-        <nav class="menu hidden md:flex items-center space-x-6 ">
+        <nav class="menu hidden md:flex items-center space-x-6">
             <a href="#" class="text-foreground menu-active">Home</a>
             <a href="#" class="text-foreground hover:text-primary transition-colors">Products</a>
             <a href="#" class="text-foreground hover:text-primary transition-colors">Categories</a>
             <a href="#" class="text-foreground hover:text-primary transition-colors">About</a>
             <a href="#" class="text-foreground hover:text-primary transition-colors">Contact</a>
         </nav>
-        <div class="right-side flex items-center space-x-4 text-2xl">
-            <div class="cart-button group">
+        <div class="right-side flex items-center md:space-x-4 text-2xl">
+            <!-- Mobile hamburger button -->
+            <button id="mobile-menu-button"
+                class="md:hidden flex justify-center items-center p-1.5 rounded-md hover:bg-gray-100 border border-slate-200">
+                <i class="bx bx-menu text-2xl"></i>
+            </button>
+
+            <!-- Cart button - hidden on mobile -->
+            <div class="cart-button group hidden md:block">
                 <button
                     class="border border-slate-200 flex justify-center items-center p-1.5 rounded-md group-hover:bg-primary">
                     <i class="bx bx-cart group-hover:text-white"></i>
                 </button>
             </div>
+
+            <!-- Sign in button - hidden on mobile -->
             <div
-                class="signin-button flex items-center justify-center py-2 px-4 rounded-md bg-primary hover:bg-secondary">
+                class="signin-button hidden md:flex items-center justify-center py-2 px-4 rounded-md bg-primary hover:bg-secondary">
                 <a href="#" class="text-sm text-white">Sign In</a>
             </div>
         </div>
     </header>
 
-    <section class="hero">
+    <!-- Mobile sidebar menu -->
+    <div id="mobile-sidebar"
+        class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-60">
+        <div class="flex justify-between items-center p-4 border-b">
+            <h3 class="text-lg font-semibold text-primary">Menu</h3>
+            <button id="close-sidebar" class="p-1.5 rounded-md hover:bg-gray-100">
+                <i class="bx bx-x text-2xl"></i>
+            </button>
+        </div>
+        <nav class="py-4">
+            <ul class="space-y-2">
+                <li><a href="#"
+                        class="block px-4 py-2 text-foreground hover:bg-gray-100 hover:text-primary transition-colors">Home</a>
+                </li>
+                <li><a href="#"
+                        class="block px-4 py-2 text-foreground hover:bg-gray-100 hover:text-primary transition-colors">Products</a>
+                </li>
+                <li><a href="#"
+                        class="block px-4 py-2 text-foreground hover:bg-gray-100 hover:text-primary transition-colors">Categories</a>
+                </li>
+                <li><a href="#"
+                        class="block px-4 py-2 text-foreground hover:bg-gray-100 hover:text-primary transition-colors">About</a>
+                </li>
+                <li><a href="#"
+                        class="block px-4 py-2 text-foreground hover:bg-gray-100 hover:text-primary transition-colors">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="border-t p-4">
+            <div class="mb-4">
+                <a href="#"
+                    class="flex items-center justify-center py-2 px-4 rounded-md bg-primary hover:bg-secondary text-white">
+                    <i class="bx bx-user-circle mr-2"></i> Sign In
+                </a>
+            </div>
+            <div>
+                <a href="#"
+                    class="flex items-center justify-center py-2 px-4 rounded-md border border-primary hover:bg-primary hover:text-white">
+                    <i class="bx bx-cart mr-2"></i> View Cart
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay for sidebar -->
+    <div id="sidebar-overlay"
+        class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-51">
+    </div>
+
+    <section class="hero mt-10 md:mt-0">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-15 items-center">
             <div class="flex flex-col">
                 <h2 class="text-4xl font-bold font-poppins text-primary mb-3">Discover Amazing Products</h2>
@@ -77,7 +135,8 @@
                         <i class="bx bx-shield"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-2 group-hover:text-white">Secure Transactions</h3>
-                    <p class="text-foreground group-hover:text-white">All purchases are protected with end-to-end encryption and our buyer
+                    <p class="text-foreground group-hover:text-white">All purchases are protected with end-to-end
+                        encryption and our buyer
                         protection program.</p>
                 </div>
 
@@ -87,17 +146,20 @@
                         <i class="bx bx-star"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-2 group-hover:text-white">Verified Sellers</h3>
-                    <p class="text-foreground group-hover:text-white">Every seller on our platform is carefully vetted to ensure quality
+                    <p class="text-foreground group-hover:text-white">Every seller on our platform is carefully vetted
+                        to ensure quality
                         products and service.</p>
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="feature-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover:bg-primary transition-shadow group">
+                <div
+                    class="feature-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover:bg-primary transition-shadow group">
                     <div class="icon-container mb-4 text-primary text-4xl group-hover:text-white">
                         <i class="bx bx-package"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-2 group-hover:text-white">Fast Delivery</h3>
-                    <p class="text-foreground group-hover:text-white">Get your products delivered quickly with our optimized logistics network
+                    <p class="text-foreground group-hover:text-white">Get your products delivered quickly with our
+                        optimized logistics network
                         and tracking system.</p>
                 </div>
             </div>
@@ -286,7 +348,7 @@
                         <i class="bx bxs-star"></i>
                         <i class="bx bxs-star"></i>
                         <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i> 
+                        <i class="bx bxs-star"></i>
                         <i class="bx bxs-star-half"></i>
                     </div>
                     <p class="text-foreground mb-4 italic">"The variety of products available on Storify is amazing. I
@@ -341,16 +403,20 @@
                     <p class="text-sm mb-4 text-gray-300">Storify is your trusted digital marketplace connecting buyers
                         with verified sellers offering unique and high-quality products.</p>
                     <div class="social-links flex space-x-3">
-                        <a href="#" class="bg-white bg-opacity-20 flex items-center justify-center rounded-full p-2 hover:bg-opacity-30 transition-all">
+                        <a href="#"
+                            class="bg-white bg-opacity-20 flex items-center justify-center rounded-full p-2 hover:bg-opacity-30 transition-all">
                             <i class="bxl bx-facebook text-xl text-black"></i>
                         </a>
-                        <a href="#" class="bg-white bg-opacity-20 flex items-center justify-center rounded-full p-2 hover:bg-opacity-30 transition-all">
+                        <a href="#"
+                            class="bg-white bg-opacity-20 flex items-center justify-center rounded-full p-2 hover:bg-opacity-30 transition-all">
                             <i class="bxl bx-twitter-x text-xl text-black"></i>
                         </a>
-                        <a href="#" class="bg-white bg-opacity-20 flex items-center justify-center rounded-full p-2 hover:bg-opacity-30 transition-all">
+                        <a href="#"
+                            class="bg-white bg-opacity-20 flex items-center justify-center rounded-full p-2 hover:bg-opacity-30 transition-all">
                             <i class="bxl bx-instagram text-xl text-black"></i>
                         </a>
-                        <a href="#" class="bg-white bg-opacity-20 flex items-center justify-center rounded-full p-2 hover:bg-opacity-30 transition-all">
+                        <a href="#"
+                            class="bg-white bg-opacity-20 flex items-center justify-center rounded-full p-2 hover:bg-opacity-30 transition-all">
                             <i class="bxl bx-linkedin text-xl text-black"></i>
                         </a>
                     </div>
@@ -412,6 +478,35 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get elements
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeSidebarButton = document.getElementById('close-sidebar');
+            const mobileSidebar = document.getElementById('mobile-sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+
+            // Function to open sidebar
+            function openSidebar() {
+                mobileSidebar.classList.remove('translate-x-full');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                overlay.classList.add('opacity-50', 'pointer-events-auto');
+            }
+
+            // Function to close sidebar
+            function closeSidebar() {
+                mobileSidebar.classList.add('translate-x-full');
+                overlay.classList.remove('opacity-50', 'pointer-events-auto');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+            }
+
+            // Event listeners
+            mobileMenuButton.addEventListener('click', openSidebar);
+            closeSidebarButton.addEventListener('click', closeSidebar);
+            overlay.addEventListener('click', closeSidebar);
+        });
+    </script>
 </body>
 
 </html>
