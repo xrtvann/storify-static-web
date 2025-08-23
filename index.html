@@ -48,9 +48,9 @@
 
     <!-- Mobile sidebar menu -->
     <div id="mobile-sidebar"
-        class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-60">
-        <div class="flex justify-between items-center p-4 border-b">
-            <h3 class="text-lg font-semibold text-primary">Menu</h3>
+        class="fixed top-0 right-0 px-3 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-60">
+        <div class="flex justify-between items-center py-4 border-b border-slate-300">
+            <img src="assets/images/storify-no-text.png" alt="Storify Logo" class="h-12 w-auto">
             <button id="close-sidebar" class="p-1.5 rounded-md hover:bg-gray-100">
                 <i class="bx bx-x text-2xl"></i>
             </button>
@@ -58,27 +58,27 @@
         <nav class="py-4">
             <ul class="space-y-2">
                 <li><a href="#"
-                        class="block px-4 py-2 text-foreground hover:bg-gray-100 hover:text-primary transition-colors">Home</a>
+                        class="flex items-center px-4 py-2 text-foreground hover:bg-primary hover:text-white transition-colors rounded-md"><i class="bx bx-home me-2.5"></i>Home</a>
                 </li>
                 <li><a href="#"
-                        class="block px-4 py-2 text-foreground hover:bg-gray-100 hover:text-primary transition-colors">Products</a>
+                        class="flex items-center px-4 py-2 text-foreground hover:bg-primary hover:text-white transition-colors rounded-md"><i class="bx bx-shopping-bag-alt me-2.5"></i>Products</a>
                 </li>
                 <li><a href="#"
-                        class="block px-4 py-2 text-foreground hover:bg-gray-100 hover:text-primary transition-colors">Categories</a>
+                        class="flex items-center px-4 py-2 text-foreground hover:bg-primary hover:text-white transition-colors rounded-md"><i class="bx bx-categories me-2.5"></i>Categories</a>
                 </li>
                 <li><a href="#"
-                        class="block px-4 py-2 text-foreground hover:bg-gray-100 hover:text-primary transition-colors">About</a>
+                        class="flex items-center px-4 py-2 text-foreground hover:bg-primary hover:text-white transition-colors rounded-md"><i class="bx bx-info-circle me-2.5"></i>About</a>
                 </li>
                 <li><a href="#"
-                        class="block px-4 py-2 text-foreground hover:bg-gray-100 hover:text-primary transition-colors">Contact</a>
+                        class="flex items-center px-4 py-2 text-foreground hover:bg-primary hover:text-white transition-colors rounded-md"><i class="bx bx-envelope me-2.5"></i>Contact</a>
                 </li>
             </ul>
         </nav>
-        <div class="border-t p-4">
+        <div class="border-t p-4 border-slate-300">
             <div class="mb-4">
                 <a href="#"
                     class="flex items-center justify-center py-2 px-4 rounded-md bg-primary hover:bg-secondary text-white">
-                    <i class="bx bx-user-circle mr-2"></i> Sign In
+                    Sign In
                 </a>
             </div>
             <div>
@@ -479,34 +479,7 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Get elements
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const closeSidebarButton = document.getElementById('close-sidebar');
-            const mobileSidebar = document.getElementById('mobile-sidebar');
-            const overlay = document.getElementById('sidebar-overlay');
-
-            // Function to open sidebar
-            function openSidebar() {
-                mobileSidebar.classList.remove('translate-x-full');
-                overlay.classList.remove('opacity-0', 'pointer-events-none');
-                overlay.classList.add('opacity-50', 'pointer-events-auto');
-            }
-
-            // Function to close sidebar
-            function closeSidebar() {
-                mobileSidebar.classList.add('translate-x-full');
-                overlay.classList.remove('opacity-50', 'pointer-events-auto');
-                overlay.classList.add('opacity-0', 'pointer-events-none');
-            }
-
-            // Event listeners
-            mobileMenuButton.addEventListener('click', openSidebar);
-            closeSidebarButton.addEventListener('click', closeSidebar);
-            overlay.addEventListener('click', closeSidebar);
-        });
-    </script>
+    <script src="vendor/js/app.js"></script>
 </body>
 
 </html>
