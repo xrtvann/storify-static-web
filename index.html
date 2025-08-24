@@ -31,11 +31,37 @@
             </button>
 
             <!-- Cart button - hidden on mobile -->
-            <div class="cart-button group hidden md:block">
-                <button
+            <div class="cart-button group hidden md:block relative">
+                <button id="cart-toggle-button"
                     class="border border-slate-200 flex justify-center items-center p-1.5 rounded-md group-hover:bg-primary">
                     <i class="bx bx-cart group-hover:text-white"></i>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-secondary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
                 </button>
+                
+                <!-- Cart dropdown -->
+                <div id="cart-dropdown" class="absolute right-0 mt-2 w-80 bg-white rounded-md shadow-lg overflow-hidden z-50 hidden">
+                    <div class="p-4 border-b border-gray-100">
+                        <h3 class="text-lg font-semibold text-primary">Your Cart</h3>
+                    </div>
+                    
+                    <div id="cart-items-container" class="max-h-80 overflow-y-auto p-2">
+                        <!-- Cart items will be inserted here -->
+                        <div id="empty-cart-message" class="p-4 text-center text-gray-500">
+                            Your cart is empty
+                        </div>
+                    </div>
+                    
+                    <div class="p-4 border-t border-gray-100">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Subtotal:</span>
+                            <span id="cart-subtotal" class="font-bold">$0.00</span>
+                        </div>
+                        <div class="flex space-x-2">
+                            <a href="#" class="flex-1 py-2 px-3 bg-gray-200 text-center rounded-md text-foreground hover:bg-gray-300 transition-colors text-sm">View Cart</a>
+                            <a href="#" class="flex-1 py-2 px-3 bg-primary text-center rounded-md text-white hover:bg-secondary transition-colors text-sm">Checkout</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Sign in button - hidden on mobile -->
@@ -82,9 +108,9 @@
                 </a>
             </div>
             <div>
-                <a href="#"
+                <a href="#" id="mobile-view-cart"
                     class="flex items-center justify-center py-2 px-4 rounded-md border border-primary hover:bg-primary hover:text-white">
-                    <i class="bx bx-cart mr-2"></i> View Cart
+                    <i class="bx bx-cart mr-2"></i> View Cart <span id="mobile-cart-count" class="ml-2 bg-secondary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
                 </a>
             </div>
         </div>
@@ -198,7 +224,7 @@
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-primary font-bold">$49.99</span>
-                            <button
+                            <button onclick="addToCart(1)"
                                 class="text-primary hover:text-white hover:bg-primary p-1.5 rounded-full transition-colors">
                                 <i class="bx bx-cart"></i>
                             </button>
@@ -232,7 +258,7 @@
                                 <span class="text-primary font-bold">$89.99</span>
                                 <span class="text-xs text-gray-500 line-through ml-1">$129.99</span>
                             </div>
-                            <button
+                            <button onclick="addToCart(2)"
                                 class="text-primary hover:text-white hover:bg-primary p-1.5 rounded-full transition-colors">
                                 <i class="bx bx-cart"></i>
                             </button>
@@ -262,7 +288,7 @@
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-primary font-bold">$29.99</span>
-                            <button
+                            <button onclick="addToCart(3)"
                                 class="text-primary hover:text-white hover:bg-primary p-1.5 rounded-full transition-colors">
                                 <i class="bx bx-cart"></i>
                             </button>
@@ -294,7 +320,7 @@
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-primary font-bold">$59.99</span>
-                            <button
+                            <button onclick="addToCart(4)"
                                 class="text-primary hover:text-white hover:bg-primary p-1.5 rounded-full transition-colors">
                                 <i class="bx bx-cart"></i>
                             </button>
