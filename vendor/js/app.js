@@ -43,18 +43,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to toggle cart fullscreen
   function toggleCartFullscreen() {
-    if (cartSidebar.classList.contains("w-100")) {
-      // Exit fullscreen
-      cartSidebar.classList.remove("w-100");
+    if (cartSidebar.classList.contains("w-full")) {
+      // Exit fullscreen - return to normal width
+      cartSidebar.classList.remove("w-full");
       cartSidebar.classList.add("w-100");
       fullscreenCartButton.innerHTML =
         '<i class="bx bx-fullscreen text-2xl"></i>';
     } else {
-      // Enter fullscreen
+      // Enter fullscreen - expand to full width
       cartSidebar.classList.remove("w-100");
       cartSidebar.classList.add("w-full");
       fullscreenCartButton.innerHTML =
-        '<i class="bx bx-exit-fullscreen text-2xl"></i>';
+        '<i class="bx bx-shrink-right text-2xl"></i>';
     }
   }
 
