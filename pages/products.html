@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Storify - Your Digital Marketplace</title>
-    <link rel="stylesheet" href="build/output.css">
+    <title>Products - Storify - Your Digital Marketplace</title>
+    <link rel="stylesheet" href="../build/output.css">
     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
     <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
 </head>
@@ -14,11 +14,13 @@
     <header id="navbar"
         class="navbar flex items-center justify-between py-4 md:px-15 px-5 shadow-sm sticky top-0 bg-white z-50">
         <div class="navbar-brand flex items-center">
-            <img src="assets/images/storify-logo.png" alt="Storify Logo" class="h-11 w-auto">
+            <a href="../index.html">
+                <img src="../assets/images/storify-logo.png" alt="Storify Logo" class="h-11 w-auto">
+            </a>
         </div>
         <nav class="menu hidden md:flex items-center space-x-6">
-            <a href="." class="text-foreground menu-active">Home</a>
-            <a href="pages/products.html" class="text-foreground hover:text-primary transition-colors">Products</a>
+            <a href="../index.html" class="text-foreground hover:text-primary transition-colors">Home</a>
+            <a href="products.html" class="text-foreground menu-active">Products</a>
             <a href="#" class="text-foreground hover:text-primary transition-colors">Categories</a>
             <a href="#" class="text-foreground hover:text-primary transition-colors">About</a>
             <a href="#" class="text-foreground hover:text-primary transition-colors">Contact</a>
@@ -50,21 +52,21 @@
 
     <!-- Mobile sidebar menu -->
     <div id="mobile-sidebar"
-        class="fixed top-0 right-0 px-3 h-full w-80 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-60">
+        class="fixed top-0 right-0 px-3 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-60">
         <div class="flex justify-between items-center py-4 border-b border-slate-300">
-            <img src="assets/images/storify-no-text.png" alt="Storify Logo" class="h-12 w-auto">
+            <img src="../assets/images/storify-no-text.png" alt="Storify Logo" class="h-12 w-auto">
             <button id="close-sidebar" class="flex p-1.5 border border-slate-200 rounded-md hover:bg-gray-100">
                 <i class="bx bx-x text-2xl"></i>
             </button>
         </div>
         <nav class="py-4">
             <ul class="space-y-2">
-                <li><a href="#"
+                <li><a href="../index.html"
                         class="flex items-center px-4 py-2 text-foreground hover:bg-primary hover:text-white transition-colors rounded-md"><i
                             class="bx bx-home me-2.5"></i>Home</a>
                 </li>
-                <li><a href="#"
-                        class="flex items-center px-4 py-2 text-foreground hover:bg-primary hover:text-white transition-colors rounded-md"><i
+                <li><a href="products.html"
+                        class="flex items-center px-4 py-2 text-foreground bg-primary text-white transition-colors rounded-md"><i
                             class="bx bx-shopping-bag-alt me-2.5"></i>Products</a>
                 </li>
                 <li><a href="#"
@@ -88,24 +90,29 @@
                     Sign In
                 </a>
             </div>
-           
+            <div>
+                <a href="#" id="mobile-view-cart"
+                    class="flex items-center justify-center py-2 px-4 rounded-md border border-primary hover:bg-primary hover:text-white">
+                    <i class="bx bx-cart mr-2"></i> View Cart <span id="mobile-cart-count"
+                        class="ml-2 bg-secondary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                </a>
+            </div>
         </div>
     </div>
 
     <!-- Cart sidebar -->
     <div id="cart-sidebar"
-        class="fixed top-0 right-0 h-full w-80 md:w-100 bg-white shadow-lg transform translate-x-full transition-all duration-300 ease-in-out z-60">
+        class="fixed top-0 right-0 h-full w-100 bg-white shadow-lg transform translate-x-full transition-all duration-300 ease-in-out z-60">
         <div class="flex justify-between items-center py-4 px-6 border-b border-slate-300">
             <h2 class="text-xl font-semibold text-primary">Shopping Cart</h2>
             <div class="button flex space-x-2">
-                <button id="fullscreen-sidebar" class="p-1.5 border border-slate-200 rounded-md hover:bg-gray-100 hidden md:flex">
+                <button id="fullscreen-sidebar" class="flex p-1.5 border border-slate-200 rounded-md hover:bg-gray-100">
                     <i class="bx bx-fullscreen text-2xl"></i>
                 </button>
                 <button id="close-cart-sidebar" class="flex p-1.5 border border-slate-200 rounded-md hover:bg-gray-100">
                     <i class="bx bx-x text-2xl"></i>
                 </button>
             </div>
-
         </div>
 
         <div class="flex flex-col h-full pb-4">
@@ -117,34 +124,9 @@
                     <p class="text-lg mb-2 font-medium">Your cart is empty</p>
                     <p class="text-sm">Add some products to get started!</p>
                 </div>
-
-                <!-- Sample cart item (hidden by default) -->
-                <div id="cart-item-template" class="hidden">
-                    <div class="flex items-center justify-between py-3 border-b border-gray-100">
-                        <div class="flex items-center space-x-3">
-                            <img src="" alt="" class="w-12 h-12 object-cover rounded-md">
-                            <div>
-                                <h4 class="font-medium text-sm"></h4>
-                                <p class="text-xs text-gray-500"></p>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <button class="quantity-btn minus-btn text-gray-500 hover:text-primary">
-                                <i class="bx bx-minus"></i>
-                            </button>
-                            <span class="quantity px-2 py-1 bg-gray-100 rounded text-sm">1</span>
-                            <button class="quantity-btn plus-btn text-gray-500 hover:text-primary">
-                                <i class="bx bx-plus"></i>
-                            </button>
-                            <button class="remove-btn text-red-500 hover:text-red-700 ml-2">
-                                <i class="bx bx-trash"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
             </div>
 
-            <!-- Cart footer - Fixed at bottom -->
+            <!-- Cart footer -->
             <div class="mt-auto border-t border-gray-200 bg-white">
                 <div class="p-4">
                     <div class="flex justify-between items-center mb-3">
@@ -171,87 +153,57 @@
         class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-51">
     </div>
 
-    <section class="hero mt-10 md:mt-0">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-15 items-center">
-            <div class="flex flex-col">
-                <h2 class="text-4xl font-bold font-poppins text-primary mb-3">Discover Amazing Products</h2>
-                <p class="text-lg text-foreground mb-5 text-wrap w-5/6">
-                    Welcome to Storify, your one-stop digital marketplace for discovering unique products from trusted
-                    sellers. Explore our curated collections and find something special today!
-                </p>
-                <div class="buttons flex gap-4">
-                    <a href="#" class="bg-primary flex py-2 px-7 text-white w-fit rounded-md hover:bg-secondary">Shop
-                        Now</a>
-                    <a href="#"
-                        class="flex py-2 px-7 w-fit rounded-md border border-primary hover:bg-primary hover:text-white">View
-                        Categories</a>
-                </div>
-            </div>
-
-            <div class="hero-image flex justify-center items-center">
-                <img src="assets/images/3d-ilustrasion.png" alt="3D Online Shopping Illustration"
-                    class="w-full max-w-lg h-auto animate-float drop-shadow-xl">
-                <!-- Note: You'll need to add the actual 3D shopping image to your assets folder -->
+    <!-- Page Header -->
+    <section class="page-header bg-gray-50 py-12">
+        <div class="container mx-auto px-6 md:px-15">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold font-poppins text-primary mb-3">Our Products</h1>
+                <p class="text-lg text-foreground max-w-2xl mx-auto">Discover our complete collection of amazing
+                    products from trusted sellers</p>
             </div>
         </div>
     </section>
 
-    <section class="features py-16 bg-gray-50">
+    <!-- Filters and Search -->
+    <section class="filters py-8 bg-white">
         <div class="container mx-auto px-6 md:px-15">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold font-poppins text-primary mb-3">Why Choose Storify</h2>
-                <p class="text-lg text-foreground max-w-2xl mx-auto">Our marketplace offers unique benefits that make
-                    your shopping experience better.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="feature-card bg-white p-6 rounded-lg shadow-md hover:bg-primary transition-shadow group">
-                    <div class="icon-container mb-4 text-primary text-4xl group-hover:text-white">
-                        <i class="bx bx-shield"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 group-hover:text-white">Secure Transactions</h3>
-                    <p class="text-foreground group-hover:text-white">All purchases are protected with end-to-end
-                        encryption and our buyer
-                        protection program.</p>
+            <div class="flex flex-col md:flex-row gap-4 items-center ">
+                <!-- Search Bar -->
+                <div class="relative flex-1 max-w-md">
+                    <input type="text" placeholder="Search products..."
+                        class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <i class="bx bx-search absolute left-3 top-3 text-gray-400"></i>
                 </div>
 
-                <!-- Feature 2 -->
-                <div class="feature-card bg-white p-6 rounded-lg shadow-md  hover:bg-primary transition-shadow group">
-                    <div class="icon-container mb-4 text-primary text-4xl group-hover:text-white">
-                        <i class="bx bx-star"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 group-hover:text-white">Verified Sellers</h3>
-                    <p class="text-foreground group-hover:text-white">Every seller on our platform is carefully vetted
-                        to ensure quality
-                        products and service.</p>
-                </div>
+                <!-- Category Filter -->
+                <select
+                    class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    <option value="">All Categories</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="audio">Audio</option>
+                    <option value="accessories">Accessories</option>
+                    <option value="gadgets">Gadgets</option>
+                </select>
 
-                <!-- Feature 3 -->
-                <div
-                    class="feature-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover:bg-primary transition-shadow group">
-                    <div class="icon-container mb-4 text-primary text-4xl group-hover:text-white">
-                        <i class="bx bx-package"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 group-hover:text-white">Fast Delivery</h3>
-                    <p class="text-foreground group-hover:text-white">Get your products delivered quickly with our
-                        optimized logistics network
-                        and tracking system.</p>
-                </div>
+                <!-- Sort Filter -->
+                <select
+                    class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Highest Rated</option>
+                    <option value="newest">Newest</option>
+                </select>
             </div>
         </div>
     </section>
 
-    <section class="popular-products py-16">
+    <!-- Products Grid -->
+    <section class="products py-16">
         <div class="container mx-auto px-6 md:px-15">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold font-poppins text-primary mb-3">Popular Products</h2>
-                <p class="text-lg text-foreground max-w-2xl mx-auto">Browse our best-selling items loved by thousands of
-                    customers</p>
-            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Product Card 1 -->
+                <!-- Product Card 1 - Wireless Earbuds -->
                 <div
                     class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                     <div class="product-image relative">
@@ -275,14 +227,14 @@
                         <div class="flex justify-between items-center">
                             <span class="text-primary font-bold">$49.99</span>
                             <button onclick="addToCart(1)"
-                                class="flex text-primary hover:text-white hover:bg-primary p-1.5 rounded-full transition-colors">
+                                class="text-primary hover:text-white hover:bg-primary p-1.5 rounded-full transition-colors">
                                 <i class="bx bx-cart"></i>
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Product Card 2 -->
+                <!-- Product Card 2 - Smart Watch -->
                 <div
                     class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                     <div class="product-image relative">
@@ -309,14 +261,14 @@
                                 <span class="text-xs text-gray-500 line-through ml-1">$129.99</span>
                             </div>
                             <button onclick="addToCart(2)"
-                                class="flex text-primary hover:text-white hover:bg-primary p-1.5 rounded-full transition-colors">
+                                class="text-primary hover:text-white hover:bg-primary p-1.5 rounded-full transition-colors">
                                 <i class="bx bx-cart"></i>
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Product Card 3 -->
+                <!-- Product Card 3 - Portable Charger -->
                 <div
                     class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                     <div class="product-image relative">
@@ -339,14 +291,14 @@
                         <div class="flex justify-between items-center">
                             <span class="text-primary font-bold">$29.99</span>
                             <button onclick="addToCart(3)"
-                                class="flex text-primary hover:text-white hover:bg-primary p-1.5 rounded-full transition-colors">
+                                class="text-primary hover:text-white hover:bg-primary p-1.5 rounded-full transition-colors">
                                 <i class="bx bx-cart"></i>
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Product Card 4 -->
+                <!-- Product Card 4 - Bluetooth Speaker -->
                 <div
                     class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                     <div class="product-image relative">
@@ -371,98 +323,153 @@
                         <div class="flex justify-between items-center">
                             <span class="text-primary font-bold">$59.99</span>
                             <button onclick="addToCart(4)"
-                                class="flex text-primary hover:text-white hover:bg-primary p-1.5 rounded-full transition-colors">
+                                class="text-primary hover:text-white hover:bg-primary p-1.5 rounded-full transition-colors">
                                 <i class="bx bx-cart"></i>
                             </button>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="text-center mt-8">
-                <a href="pages/products.html"
-                    class="inline-block py-2 px-6 bg-primary text-white rounded-md hover:bg-secondary transition-colors">View
-                    All Products</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials py-16 bg-gray-50">
-        <div class="container mx-auto px-6 md:px-15">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold font-poppins text-primary mb-3">What Our Customers Say</h2>
-                <p class="text-lg text-foreground max-w-2xl mx-auto">Hear from people who love shopping with Storify</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <div class="flex text-yellow-400 mb-4">
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                    </div>
-                    <p class="text-foreground mb-4 italic">"I've been shopping on Storify for over a year now and I'm
-                        consistently impressed by the quality of products and customer service. The delivery is always
-                        on time!"</p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
-                            <i class="bx bx-user text-gray-500"></i>
+                <!-- Product Card 5 - Gaming Headset -->
+                <div
+                    class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div class="product-image relative">
+                        <div class="bg-gray-200 h-48 flex items-center justify-center">
+                            <i class="bx bx-image text-5xl text-gray-400"></i>
                         </div>
-                        <div>
-                            <h4 class="font-semibold">Sarah Johnson</h4>
-                            <p class="text-sm text-gray-500">Loyal Customer</p>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-1">Gaming Headset</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                            </div>
+                            <span class="text-xs ml-1 text-gray-500">(67)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$79.99</span>
+                            <button onclick="addToCart(5)"
+                                class="text-primary hover:text-white hover:bg-primary p-1.5 rounded-full transition-colors">
+                                <i class="bx bx-cart"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <div class="flex text-yellow-400 mb-4">
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star-half"></i>
-                    </div>
-                    <p class="text-foreground mb-4 italic">"The variety of products available on Storify is amazing. I
-                        found items here that I couldn't find anywhere else. The secure payment system gives me peace of
-                        mind."</p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
-                            <i class="bx bx-user text-gray-500"></i>
+                <!-- Product Card 6 - Smartphone Stand -->
+                <div
+                    class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div class="product-image relative">
+                        <div class="bg-gray-200 h-48 flex items-center justify-center">
+                            <i class="bx bx-image text-5xl text-gray-400"></i>
                         </div>
-                        <div>
-                            <h4 class="font-semibold">Michael Chen</h4>
-                            <p class="text-sm text-gray-500">Tech Enthusiast</p>
+                        <div class="absolute top-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded">Popular
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-1">Smartphone Stand</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bx-star"></i>
+                            </div>
+                            <span class="text-xs ml-1 text-gray-500">(31)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$19.99</span>
+                            <button onclick="addToCart(6)"
+                                class="text-primary hover:text-white hover:bg-primary p-1.5 rounded-full transition-colors">
+                                <i class="bx bx-cart"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <div class="flex text-yellow-400 mb-4">
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                    </div>
-                    <p class="text-foreground mb-4 italic">"As a small business owner, I appreciate how Storify makes it
-                        easy to find quality products at competitive prices. Their customer support team is responsive
-                        and helpful!"</p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
-                            <i class="bx bx-user text-gray-500"></i>
+                <!-- Product Card 7 - Wireless Mouse -->
+                <div
+                    class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div class="product-image relative">
+                        <div class="bg-gray-200 h-48 flex items-center justify-center">
+                            <i class="bx bx-image text-5xl text-gray-400"></i>
                         </div>
-                        <div>
-                            <h4 class="font-semibold">Emma Rodriguez</h4>
-                            <p class="text-sm text-gray-500">Business Owner</p>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-1">Wireless Mouse</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                                <i class="bx bx-star"></i>
+                            </div>
+                            <span class="text-xs ml-1 text-gray-500">(28)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$34.99</span>
+                            <button onclick="addToCart(7)"
+                                class="text-primary hover:text-white hover:bg-primary p-1.5 rounded-full transition-colors">
+                                <i class="bx bx-cart"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
+
+                <!-- Product Card 8 - USB-C Hub -->
+                <div
+                    class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div class="product-image relative">
+                        <div class="bg-gray-200 h-48 flex items-center justify-center">
+                            <i class="bx bx-image text-5xl text-gray-400"></i>
+                        </div>
+                        <div class="absolute top-2 right-2 bg-orange-500 text-white text-xs px-2 py-1 rounded">Limited
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-1">USB-C Hub</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                            </div>
+                            <span class="text-xs ml-1 text-gray-500">(15)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$54.99</span>
+                            <button onclick="addToCart(8)"
+                                class="text-primary hover:text-white hover:bg-primary p-1.5 rounded-full transition-colors">
+                                <i class="bx bx-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center mt-12">
+                <nav class="flex space-x-2">
+                    <button class="px-3 py-2 border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50"
+                        disabled>
+                        <i class="bx bx-chevron-left"></i>
+                    </button>
+                    <button class="px-3 py-2 bg-primary text-white rounded-md">1</button>
+                    <button class="px-3 py-2 border border-gray-300 rounded-md hover:bg-gray-50">2</button>
+                    <button class="px-3 py-2 border border-gray-300 rounded-md hover:bg-gray-50">3</button>
+                    <button class="px-3 py-2 border border-gray-300 rounded-md hover:bg-gray-50">
+                        <i class="bx bx-chevron-right"></i>
+                    </button>
+                </nav>
             </div>
         </div>
     </section>
@@ -473,7 +480,7 @@
                 <!-- Company Info -->
                 <div class="footer-column">
                     <div class="mb-4">
-                        <img src="assets/images/storify-logo.png" alt="Storify Logo"
+                        <img src="../assets/images/storify-logo.png" alt="Storify Logo"
                             class="h-10 w-auto brightness-0 invert">
                     </div>
                     <p class="text-sm mb-4 text-gray-300">Storify is your trusted digital marketplace connecting buyers
@@ -502,8 +509,10 @@
                 <div class="footer-column">
                     <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
+                        </li>
+                        <li><a href="products.html"
+                                class="text-gray-300 hover:text-white transition-colors">Products</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Categories</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Deals</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
@@ -555,7 +564,7 @@
         </div>
     </footer>
 
-    <script src="vendor/js/app.js"></script>
+    <script src="../vendor/js/app.js"></script>
 </body>
 
 </html>
