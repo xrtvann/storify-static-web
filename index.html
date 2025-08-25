@@ -23,26 +23,26 @@
             <a href="#" class="text-foreground hover:text-primary transition-colors">About</a>
             <a href="#" class="text-foreground hover:text-primary transition-colors">Contact</a>
         </nav>
-        <div class="right-side flex items-center md:space-x-4 text-2xl">
-            <!-- Mobile hamburger button -->
-            <button id="mobile-menu-button"
-                class="md:hidden flex justify-center items-center p-1.5 rounded-md hover:bg-gray-100 border border-slate-200">
-                <i class="bx bx-menu text-2xl"></i>
-            </button>
-
-            <!-- Cart button - hidden on mobile -->
-            <div class="cart-button hidden md:block relative">
+        <div class="right-side flex items-center text-2xl">
+            <!-- Cart button - now visible on mobile with spacing -->
+            <div class="cart-button relative mr-3 md:mr-1">
                 <button id="cart-toggle-button"
-                    class="border border-slate-200 flex justify-center items-center p-1.5 rounded-md hover:bg-primary hover:text-white transition-colors">
+                    class="border border-slate-200 flex justify-center items-center p-1.5 rounded-md hover:bg-gray-100 md:hover:bg-primary md:hover:text-white transition-colors">
                     <i class="bx bx-cart"></i>
                     <span id="cart-count"
                         class="absolute -top-2 -right-2 bg-secondary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
                 </button>
             </div>
 
+            <!-- Mobile hamburger button -->
+            <button id="mobile-menu-button"
+                class="md:hidden flex justify-center items-center p-1.5 rounded-md hover:bg-gray-100 border border-slate-200">
+                <i class="bx bx-menu text-2xl"></i>
+            </button>
+
             <!-- Sign in button - hidden on mobile -->
             <div
-                class="signin-button hidden md:flex items-center justify-center py-2 px-4 rounded-md bg-primary hover:bg-secondary">
+                class="signin-button hidden md:flex items-center justify-center py-2 px-4 rounded-md bg-primary hover:bg-secondary ml-4">
                 <a href="#" class="text-sm text-white">Sign In</a>
             </div>
         </div>
@@ -50,7 +50,7 @@
 
     <!-- Mobile sidebar menu -->
     <div id="mobile-sidebar"
-        class="fixed top-0 right-0 px-3 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-60">
+        class="fixed top-0 right-0 px-3 h-full w-80 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-60">
         <div class="flex justify-between items-center py-4 border-b border-slate-300">
             <img src="assets/images/storify-no-text.png" alt="Storify Logo" class="h-12 w-auto">
             <button id="close-sidebar" class="flex p-1.5 border border-slate-200 rounded-md hover:bg-gray-100">
@@ -88,23 +88,17 @@
                     Sign In
                 </a>
             </div>
-            <div>
-                <a href="#" id="mobile-view-cart"
-                    class="flex items-center justify-center py-2 px-4 rounded-md border border-primary hover:bg-primary hover:text-white">
-                    <i class="bx bx-cart mr-2"></i> View Cart <span id="mobile-cart-count"
-                        class="ml-2 bg-secondary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
-                </a>
-            </div>
+           
         </div>
     </div>
 
     <!-- Cart sidebar -->
     <div id="cart-sidebar"
-        class="fixed top-0 right-0 h-full w-100 bg-white shadow-lg transform translate-x-full transition-all duration-300 ease-in-out z-60">
+        class="fixed top-0 right-0 h-full w-80 md:w-100 bg-white shadow-lg transform translate-x-full transition-all duration-300 ease-in-out z-60">
         <div class="flex justify-between items-center py-4 px-6 border-b border-slate-300">
             <h2 class="text-xl font-semibold text-primary">Shopping Cart</h2>
             <div class="button flex space-x-2">
-                <button id="fullscreen-sidebar" class="flex p-1.5 border border-slate-200 rounded-md hover:bg-gray-100">
+                <button id="fullscreen-sidebar" class="p-1.5 border border-slate-200 rounded-md hover:bg-gray-100 hidden md:flex">
                     <i class="bx bx-fullscreen text-2xl"></i>
                 </button>
                 <button id="close-cart-sidebar" class="flex p-1.5 border border-slate-200 rounded-md hover:bg-gray-100">
