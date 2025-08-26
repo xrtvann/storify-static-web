@@ -13,6 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const mobileViewCartButton = document.querySelector("#mobile-view-cart");
   const fullscreenCartButton = document.querySelector("#fullscreen-sidebar");
 
+  // Account dropdown elements
+  const accountDropdownButton = document.querySelector("#account-dropdown");
+  const accountDropdownItems = document.querySelector("#account-dropdown-items");
+
   // Function to open mobile menu sidebar
   function openMobileSidebar() {
     if (mobileSidebar && overlay) {
@@ -74,6 +78,13 @@ document.addEventListener("DOMContentLoaded", function () {
     closeCartSidebar();
   }
 
+  function toggleAccountDropdown() {
+    if (accountDropdownItems) {
+      accountDropdownItems.classList.toggle("hidden");
+    }
+  }
+
+
   // Event listeners for mobile menu - with null checks
   if (mobileMenuButton) {
     mobileMenuButton.addEventListener("click", openMobileSidebar);
@@ -106,4 +117,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (overlay) {
     overlay.addEventListener("click", closeAllSidebars);
   }
+
+  if (accountDropdownButton) {
+    accountDropdownButton.addEventListener("click", toggleAccountDropdown);
+  }
+
 });

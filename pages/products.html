@@ -47,6 +47,27 @@
                 class="signin-button hidden md:flex items-center justify-center py-2 px-4 rounded-md bg-primary hover:bg-secondary ml-4">
                 <a href="#" class="text-sm text-white">Sign In</a>
             </div>
+
+            <div class="relative hidden">
+                <button id="account-dropdown"
+                    class="account-button flex items-center justify-center py-2 px-4 rounded-md bg-transparent ml-4 border border-slate-200 cursor-pointer group hover:bg-primary dropdown-toggle">
+                    <p class="text-sm flex items-center gap-2 group-hover:text-white">
+                        <i class="bx bx-user text-xl group-hover:text-white"></i>
+                        Muhammad Irvan
+                    </p>
+                </button>
+                <div id="account-dropdown-items"
+                    class="absolute right-0 mt-2 w-[177px] bg-white border border-slate-200 rounded-md shadow-lg p-4 hidden">
+                    <div class="navigation-menu">
+                        <a href="#"
+                            class="block py-2 px-4 text-sm text-foreground hover:bg-primary hover:text-white transition-colors rounded-md">Profile</a>
+                        <a href="#"
+                            class="block py-2 px-4 text-sm text-foreground hover:bg-primary hover:text-white transition-colors rounded-md">Settings</a>
+                        <a href="#"
+                            class="block py-2 px-4 text-sm text-foreground hover:bg-red-700 hover:text-white transition-colors rounded-md">Logout</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
