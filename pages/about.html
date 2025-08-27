@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Storify - Your Digital Marketplace</title>
+    <link rel="stylesheet" href="../build/output.css">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+</head>
+
+<body class="font-inter">
+    <header id="navbar"
+        class="navbar flex items-center justify-between py-4 md:px-15 px-5 shadow-sm sticky top-0 bg-white z-50">
+        <div class="navbar-brand flex items-center">
+            <a href="../index.html">
+                <img src="../assets/images/storify-logo.png" alt="Storify Logo" class="h-11 w-auto">
+            </a>
+        </div>
+        <nav class="menu hidden md:flex items-center space-x-6">
+            <a href="../index.html" class="text-foreground hover:text-primary transition-colors">Home</a>
+            <a href="products.html" class="text-foreground hover:text-primary transition-colors">Products</a>
+            <a href="#" class="text-foreground hover:text-primary transition-colors">Categories</a>
+            <a href="about.html" class="text-foreground menu-active">About</a>
+            <a href="contact.html" class="text-foreground hover:text-primary transition-colors">Contact</a>
+        </nav>
+        <div class="right-side flex items-center text-2xl">
+            <!-- Cart button - now visible on mobile with spacing -->
+            <div class="cart-button relative mr-3 md:mr-1">
+                <button id="cart-toggle-button"
+                    class="border border-slate-200 flex justify-center items-center p-1.5 rounded-md hover:bg-gray-100 md:hover:bg-primary md:hover:text-white transition-colors">
+                    <i class="bx bx-cart"></i>
+                    <span id="cart-count"
+                        class="absolute -top-2 -right-2 bg-secondary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                </button>
+            </div>
+
+            <!-- Mobile hamburger button -->
+            <button id="mobile-menu-button"
+                class="md:hidden flex justify-center items-center p-1.5 rounded-md hover:bg-gray-100 border border-slate-200">
+                <i class="bx bx-menu text-2xl"></i>
+            </button>
+
+            <!-- Sign in button - hidden on mobile -->
+            <div
+                class="signin-button hidden md:flex items-center justify-center py-2 px-4 rounded-md bg-primary hover:bg-secondary ml-4">
+                <a href="#" class="text-sm text-white">Sign In</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile sidebar menu -->
+    <div id="mobile-sidebar"
+        class="fixed top-0 right-0 px-3 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-60">
+        <div class="flex justify-between items-center py-4 border-b border-slate-300">
+            <img src="../assets/images/storify-no-text.png" alt="Storify Logo" class="h-12 w-auto">
+            <button id="close-sidebar" class="flex p-1.5 border border-slate-200 rounded-md hover:bg-gray-100">
+                <i class="bx bx-x text-2xl"></i>
+            </button>
+        </div>
+        <nav class="py-4">
+            <ul class="space-y-2">
+                <li><a href="../index.html"
+                        class="flex items-center px-4 py-2 text-foreground hover:bg-primary hover:text-white transition-colors rounded-md"><i
+                            class="bx bx-home me-2.5"></i>Home</a>
+                </li>
+                <li><a href="products.html"
+                        class="flex items-center px-4 py-2 text-foreground hover:bg-primary hover:text-white transition-colors rounded-md"><i
+                            class="bx bx-shopping-bag-alt me-2.5"></i>Products</a>
+                </li>
+                <li><a href="#"
+                        class="flex items-center px-4 py-2 text-foreground hover:bg-primary hover:text-white transition-colors rounded-md"><i
+                            class="bx bx-categories me-2.5"></i>Categories</a>
+                </li>
+                <li><a href="about.html"
+                        class="flex items-center px-4 py-2 text-foreground bg-primary text-white transition-colors rounded-md"><i
+                            class="bx bx-info-circle me-2.5"></i>About</a>
+                </li>
+                <li><a href="contact.html"
+                        class="flex items-center px-4 py-2 text-foreground hover:bg-primary hover:text-white transition-colors rounded-md"><i
+                            class="bx bx-envelope me-2.5"></i>Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Cart sidebar -->
+    <div id="cart-sidebar"
+        class="fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-60">
+        <div class="flex justify-between items-center p-4 border-b border-slate-300">
+            <h3 class="text-lg font-semibold">Shopping Cart</h3>
+            <button id="close-cart" class="flex p-1.5 border border-slate-200 rounded-md hover:bg-gray-100">
+                <i class="bx bx-x text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-4 flex-1 overflow-y-auto">
+            <div class="text-center text-gray-500 mt-8">
+                <i class="bx bx-cart text-4xl mb-4"></i>
+                <p>Your cart is empty</p>
+                <p class="text-sm">Add some products to get started!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <main class="min-h-screen">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-primary to-secondary text-white py-20">
+            <div class="container mx-auto px-5 md:px-15 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">About Storify</h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
+                    Your trusted digital marketplace connecting buyers and sellers worldwide through innovative
+                    technology and exceptional service.
+                </p>
+            </div>
+        </section>
+
+        <!-- Mission & Vision Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-5 md:px-15">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Our Mission</h2>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                            To revolutionize the e-commerce experience by providing a seamless, secure, and
+                            user-friendly platform that empowers businesses and individuals to thrive in the digital
+                            marketplace.
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            We believe in democratizing commerce, making it accessible for everyone to buy and sell
+                            products globally with confidence and ease.
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white rounded-lg shadow-lg p-8">
+                            <i class="bx bx-target-lock text-6xl text-primary mb-4"></i>
+                            <h3 class="text-2xl font-semibold text-primary mb-4">Our Vision</h3>
+                            <p class="text-gray-700">
+                                To be the world's most trusted and innovative digital marketplace, fostering global
+                                commerce and creating opportunities for businesses of all sizes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-5 md:px-15">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Core Values</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        The principles that guide everything we do and shape our commitment to excellence.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center group">
+                        <div
+                            class="bg-primary bg-opacity-10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:bg-opacity-20 transition-all">
+                            <i class="bx bx-shield-check text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Trust & Security</h3>
+                        <p class="text-gray-700">
+                            We prioritize the security of your data and transactions, implementing cutting-edge security
+                            measures to protect our users.
+                        </p>
+                    </div>
+
+                    <div class="text-center group">
+                        <div
+                            class="bg-primary bg-opacity-10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:bg-opacity-20 transition-all">
+                            <i class="bx bx-rocket text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Innovation</h3>
+                        <p class="text-gray-700">
+                            We continuously evolve and adopt new technologies to enhance user experience and stay ahead
+                            of market trends.
+                        </p>
+                    </div>
+
+                    <div class="text-center group">
+                        <div
+                            class="bg-primary bg-opacity-10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:bg-opacity-20 transition-all">
+                            <i class="bx bx-heart text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Customer-Centric</h3>
+                        <p class="text-gray-700">
+                            Our customers are at the heart of everything we do. We listen, adapt, and deliver solutions
+                            that exceed expectations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-16 bg-gradient-to-r from-primary to-secondary text-white">
+            <div class="container mx-auto px-5 md:px-15">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Storify by the Numbers</h2>
+                    <p class="text-xl opacity-90">Our impact in the digital marketplace</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-4xl md:text-5xl font-bold mb-2">1M+</div>
+                        <div class="text-lg opacity-90">Active Users</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl md:text-5xl font-bold mb-2">50K+</div>
+                        <div class="text-lg opacity-90">Sellers</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl md:text-5xl font-bold mb-2">5M+</div>
+                        <div class="text-lg opacity-90">Products Sold</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl md:text-5xl font-bold mb-2">180+</div>
+                        <div class="text-lg opacity-90">Countries</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-5 md:px-15">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Meet Our Leadership Team</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Experienced professionals dedicated to driving innovation and excellence in e-commerce.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="bg-gradient-to-r from-primary to-secondary h-32"></div>
+                        <div class="p-6 text-center -mt-12">
+                            <div
+                                class="w-24 h-24 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
+                                <i class="bx bx-user text-4xl text-primary"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-primary mb-2">Sarah Johnson</h3>
+                            <p class="text-gray-600 mb-3">Chief Executive Officer</p>
+                            <p class="text-sm text-gray-700">
+                                15+ years in e-commerce and technology leadership, driving strategic vision and growth.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="bg-gradient-to-r from-primary to-secondary h-32"></div>
+                        <div class="p-6 text-center -mt-12">
+                            <div
+                                class="w-24 h-24 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
+                                <i class="bx bx-user text-4xl text-primary"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-primary mb-2">Michael Chen</h3>
+                            <p class="text-gray-600 mb-3">Chief Technology Officer</p>
+                            <p class="text-sm text-gray-700">
+                                Expert in scalable systems and security, ensuring our platform stays cutting-edge.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="bg-gradient-to-r from-primary to-secondary h-32"></div>
+                        <div class="p-6 text-center -mt-12">
+                            <div
+                                class="w-24 h-24 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
+                                <i class="bx bx-user text-4xl text-primary"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-primary mb-2">Emma Rodriguez</h3>
+                            <p class="text-gray-600 mb-3">Chief Marketing Officer</p>
+                            <p class="text-sm text-gray-700">
+                                Creative strategist focused on building meaningful connections between brands and
+                                customers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-5 md:px-15">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Journey</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        From a simple idea to a global marketplace - discover the milestones that shaped Storify.
+                    </p>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center font-bold">
+                                2020
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-primary mb-2">The Beginning</h3>
+                                <p class="text-gray-700">
+                                    Founded with a vision to create a more accessible and user-friendly e-commerce
+                                    platform for everyone.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center font-bold">
+                                2021
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-primary mb-2">First Million</h3>
+                                <p class="text-gray-700">
+                                    Reached our first million users and expanded to 50+ countries worldwide.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center font-bold">
+                                2023
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-primary mb-2">Mobile Revolution</h3>
+                                <p class="text-gray-700">
+                                    Launched our award-winning mobile app and introduced AI-powered recommendations.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="bg-secondary text-white rounded-full w-12 h-12 flex items-center justify-center font-bold">
+                                2025
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-primary mb-2">Global Leader</h3>
+                                <p class="text-gray-700">
+                                    Recognized as one of the top 10 e-commerce platforms globally with 5M+ products
+                                    sold.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-16 bg-gradient-to-r from-primary to-secondary text-white">
+            <div class="container mx-auto px-5 md:px-15 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Join the Storify Community</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">
+                    Whether you're looking to buy, sell, or simply explore, we're here to support your journey in the
+                    digital marketplace.
+                </p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
+                    <a href="../pages/products.html"
+                        class="bg-white text-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+                        Start Shopping
+                    </a>
+                    <a href="contact.html"
+                        class="border border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-primary transition-colors">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-primary to-secondary text-white py-12">
+        <div class="container mx-auto px-5 md:px-15">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="footer-column">
+                    <img src="../assets/images/storify-logo.png" alt="Storify Logo"
+                        class="h-12 w-auto mb-4 filter brightness-0 invert">
+                    <p class="text-sm mb-4 text-gray-300">Your trusted digital marketplace for all your shopping needs.
+                        Discover, shop, and sell with confidence.</p>
+                    <div class="flex space-x-3">
+                        <a href="#"
+                            class="bg-white bg-opacity-20 flex items-center justify-center rounded-full p-2 hover:bg-opacity-30 transition-all">
+                            <i class="bxl bx-facebook text-xl text-black"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white bg-opacity-20 flex items-center justify-center rounded-full p-2 hover:bg-opacity-30 transition-all">
+                            <i class="bxl bx-twitter-x text-xl text-black"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white bg-opacity-20 flex items-center justify-center rounded-full p-2 hover:bg-opacity-30 transition-all">
+                            <i class="bxl bx-instagram text-xl text-black"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white bg-opacity-20 flex items-center justify-center rounded-full p-2 hover:bg-opacity-30 transition-all">
+                            <i class="bxl bx-linkedin text-xl text-black"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
+                        </li>
+                        <li><a href="products.html"
+                                class="text-gray-300 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Categories</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Deals</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition-colors">About Us</a>
+                        </li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Customer Support -->
+                <div class="footer-column">
+                    <h4 class="font-semibold text-lg mb-4">Customer Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Shipping Policy</a>
+                        </li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Returns & Refunds</a>
+                        </li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Payment Methods</a>
+                        </li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Terms & Conditions</a>
+                        </li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-column">
+                    <h4 class="font-semibold text-lg mb-4">Subscribe to Our Newsletter</h4>
+                    <p class="text-sm mb-4 text-gray-300">Stay updated with our latest products and offers.</p>
+                    <form class="flex flex-col space-y-2">
+                        <input type="email" placeholder="Your Email Address"
+                            class="px-4 py-2 border border-slate-300 rounded-md text-foreground focus:outline-none">
+                        <button type="submit"
+                            class="bg-secondary hover:bg-opacity-80 py-2 rounded-md transition-colors hover:bg-white hover:text-primary cursor-pointer">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-white border-opacity-20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-sm text-gray-300 mb-4 md:mb-0">
+                    © 2025 Storify. All rights reserved.
+                </div>
+                <div class="flex space-x-4">
+                    <i class="bxl bx-visa text-3xl"></i>
+                    <i class="bxl bx-mastercard text-3xl"></i>
+                    <i class="bxl bx-paypal text-3xl"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../vendor/js/app.js"></script>
+</body>
+
+</html>

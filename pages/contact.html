@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Storify - Your Digital Marketplace</title>
+    <link rel="stylesheet" href="../build/output.css">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+</head>
+
+<body class="font-inter">
+    <header id="navbar"
+        class="navbar flex items-center justify-between py-4 md:px-15 px-5 shadow-sm sticky top-0 bg-white z-50">
+        <div class="navbar-brand flex items-center">
+            <a href="../index.html">
+                <img src="../assets/images/storify-logo.png" alt="Storify Logo" class="h-11 w-auto">
+            </a>
+        </div>
+        <nav class="menu hidden md:flex items-center space-x-6">
+            <a href="../index.html" class="text-foreground hover:text-primary transition-colors">Home</a>
+            <a href="products.html" class="text-foreground hover:text-primary transition-colors">Products</a>
+            <a href="#" class="text-foreground hover:text-primary transition-colors">Categories</a>
+            <a href="about.html" class="text-foreground hover:text-primary transition-colors">About</a>
+            <a href="contact.html" class="text-foreground menu-active">Contact</a>
+        </nav>
+        <div class="right-side flex items-center text-2xl">
+            <!-- Cart button - now visible on mobile with spacing -->
+            <div class="cart-button relative mr-3 md:mr-1">
+                <button id="cart-toggle-button"
+                    class="border border-slate-200 flex justify-center items-center p-1.5 rounded-md hover:bg-gray-100 md:hover:bg-primary md:hover:text-white transition-colors">
+                    <i class="bx bx-cart"></i>
+                    <span id="cart-count"
+                        class="absolute -top-2 -right-2 bg-secondary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                </button>
+            </div>
+
+            <!-- Mobile hamburger button -->
+            <button id="mobile-menu-button"
+                class="md:hidden flex justify-center items-center p-1.5 rounded-md hover:bg-gray-100 border border-slate-200">
+                <i class="bx bx-menu text-2xl"></i>
+            </button>
+
+            <!-- Sign in button - hidden on mobile -->
+            <div
+                class="signin-button hidden md:flex items-center justify-center py-2 px-4 rounded-md bg-primary hover:bg-secondary ml-4">
+                <a href="#" class="text-sm text-white">Sign In</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile sidebar menu -->
+    <div id="mobile-sidebar"
+        class="fixed top-0 right-0 px-3 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-60">
+        <div class="flex justify-between items-center py-4 border-b border-slate-300">
+            <img src="../assets/images/storify-no-text.png" alt="Storify Logo" class="h-12 w-auto">
+            <button id="close-sidebar" class="flex p-1.5 border border-slate-200 rounded-md hover:bg-gray-100">
+                <i class="bx bx-x text-2xl"></i>
+            </button>
+        </div>
+        <nav class="py-4">
+            <ul class="space-y-2">
+                <li><a href="../index.html"
+                        class="flex items-center px-4 py-2 text-foreground hover:bg-primary hover:text-white transition-colors rounded-md"><i
+                            class="bx bx-home me-2.5"></i>Home</a>
+                </li>
+                <li><a href="products.html"
+                        class="flex items-center px-4 py-2 text-foreground hover:bg-primary hover:text-white transition-colors rounded-md"><i
+                            class="bx bx-shopping-bag-alt me-2.5"></i>Products</a>
+                </li>
+                <li><a href="#"
+                        class="flex items-center px-4 py-2 text-foreground hover:bg-primary hover:text-white transition-colors rounded-md"><i
+                            class="bx bx-categories me-2.5"></i>Categories</a>
+                </li>
+                <li><a href="about.html"
+                        class="flex items-center px-4 py-2 text-foreground hover:bg-primary hover:text-white transition-colors rounded-md"><i
+                            class="bx bx-info-circle me-2.5"></i>About</a>
+                </li>
+                <li><a href="contact.html"
+                        class="flex items-center px-4 py-2 text-foreground bg-primary text-white transition-colors rounded-md"><i
+                            class="bx bx-envelope me-2.5"></i>Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Cart sidebar -->
+    <div id="cart-sidebar"
+        class="fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-60">
+        <div class="flex justify-between items-center p-4 border-b border-slate-300">
+            <h3 class="text-lg font-semibold">Shopping Cart</h3>
+            <button id="close-cart" class="flex p-1.5 border border-slate-200 rounded-md hover:bg-gray-100">
+                <i class="bx bx-x text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-4 flex-1 overflow-y-auto">
+            <div class="text-center text-gray-500 mt-8">
+                <i class="bx bx-cart text-4xl mb-4"></i>
+                <p>Your cart is empty</p>
+                <p class="text-sm">Add some products to get started!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <main class="min-h-screen">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-primary to-secondary text-white py-20">
+            <div class="container mx-auto px-5 md:px-15 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Get in Touch</h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
+                    We're here to help! Reach out to us for any questions, support, or feedback. Your success is our
+                    priority.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Methods Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-5 md:px-15">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Multiple Ways to Reach Us</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Choose the method that works best for you. We're committed to providing prompt and helpful
+                        responses.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-8 text-center group hover:shadow-xl transition-shadow">
+                        <div
+                            class="bg-primary bg-opacity-10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:bg-opacity-20 transition-all">
+                            <i class="bx bx-envelope text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Email Support</h3>
+                        <p class="text-gray-700 mb-4">Get detailed assistance via email. We typically respond within 24
+                            hours.</p>
+                        <a href="mailto:support@storify.com"
+                            class="text-primary hover:text-secondary font-semibold">support@storify.com</a>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-8 text-center group hover:shadow-xl transition-shadow">
+                        <div
+                            class="bg-primary bg-opacity-10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:bg-opacity-20 transition-all">
+                            <i class="bx bx-phone text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Phone Support</h3>
+                        <p class="text-gray-700 mb-4">Speak directly with our support team for immediate assistance.</p>
+                        <a href="tel:+1-888-STORIFY" class="text-primary hover:text-secondary font-semibold">+1 (888)
+                            STORIFY</a>
+                        <p class="text-sm text-gray-500 mt-2">Mon-Fri: 9AM-6PM EST</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-8 text-center group hover:shadow-xl transition-shadow">
+                        <div
+                            class="bg-primary bg-opacity-10 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:bg-opacity-20 transition-all">
+                            <i class="bx bx-chat text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Live Chat</h3>
+                        <p class="text-gray-700 mb-4">Chat with us in real-time for quick questions and instant support.
+                        </p>
+                        <button
+                            class="bg-primary text-white px-6 py-2 rounded-md hover:bg-secondary transition-colors">Start
+                            Chat</button>
+                        <p class="text-sm text-gray-500 mt-2">Available 24/7</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-5 md:px-15">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Send Us a Message</h2>
+                        <p class="text-lg text-gray-600">
+                            Fill out the form below and we'll get back to you as soon as possible.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-12 items-start">
+                        <!-- Contact Form -->
+                        <div class="bg-white rounded-lg shadow-lg p-8">
+                            <form class="space-y-6">
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="firstName"
+                                            class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                                        <input type="text" id="firstName" name="firstName" required
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary">
+                                    </div>
+                                    <div>
+                                        <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Last
+                                            Name *</label>
+                                        <input type="text" id="lastName" name="lastName" required
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email
+                                        Address *</label>
+                                    <input type="email" id="email" name="email" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary">
+                                </div>
+
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone
+                                        Number</label>
+                                    <input type="tel" id="phone" name="phone"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary">
+                                </div>
+
+                                <div>
+                                    <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject
+                                        *</label>
+                                    <select id="subject" name="subject" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary">
+                                        <option value="">Select a subject</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="support">Technical Support</option>
+                                        <option value="billing">Billing Question</option>
+                                        <option value="seller">Become a Seller</option>
+                                        <option value="partnership">Partnership Opportunities</option>
+                                        <option value="feedback">Feedback & Suggestions</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message
+                                        *</label>
+                                    <textarea id="message" name="message" rows="5" required
+                                        placeholder="Please provide details about your inquiry..."
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary resize-vertical"></textarea>
+                                </div>
+
+                                <div class="flex items-start">
+                                    <input type="checkbox" id="newsletter" name="newsletter" class="mt-1 mr-3">
+                                    <label for="newsletter" class="text-sm text-gray-700">
+                                        I would like to receive updates and promotional emails from Storify.
+                                    </label>
+                                </div>
+
+                                <button type="submit"
+                                    class="w-full bg-primary text-white py-3 px-6 rounded-md font-semibold hover:bg-secondary transition-colors">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div class="space-y-8">
+                            <div class="bg-gradient-to-r from-primary to-secondary text-white rounded-lg p-8">
+                                <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+
+                                <div class="space-y-4">
+                                    <div class="flex items-center space-x-3">
+                                        <i class="bx bx-map text-2xl"></i>
+                                        <div>
+                                            <p class="font-semibold">Headquarters</p>
+                                            <p class="opacity-90">123 Digital Avenue, Tech District</p>
+                                            <p class="opacity-90">San Francisco, CA 94105</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center space-x-3">
+                                        <i class="bx bx-envelope text-2xl"></i>
+                                        <div>
+                                            <p class="font-semibold">Email</p>
+                                            <p class="opacity-90">support@storify.com</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center space-x-3">
+                                        <i class="bx bx-phone text-2xl"></i>
+                                        <div>
+                                            <p class="font-semibold">Phone</p>
+                                            <p class="opacity-90">+1 (888) STORIFY</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center space-x-3">
+                                        <i class="bx bx-time text-2xl"></i>
+                                        <div>
+                                            <p class="font-semibold">Business Hours</p>
+                                            <p class="opacity-90">Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+                                            <p class="opacity-90">Saturday: 10:00 AM - 4:00 PM EST</p>
+                                            <p class="opacity-90">Sunday: Closed</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-8">
+                                    <p class="font-semibold mb-4">Follow Us</p>
+                                    <div class="flex space-x-3">
+                                        <a href="#"
+                                            class="bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30 transition-all">
+                                            <i class="bxl bx-facebook text-xl"></i>
+                                        </a>
+                                        <a href="#"
+                                            class="bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30 transition-all">
+                                            <i class="bxl bx-twitter-x text-xl"></i>
+                                        </a>
+                                        <a href="#"
+                                            class="bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30 transition-all">
+                                            <i class="bxl bx-instagram text-xl"></i>
+                                        </a>
+                                        <a href="#"
+                                            class="bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30 transition-all">
+                                            <i class="bxl bx-linkedin text-xl"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Section -->
+                            <div class="bg-gray-50 rounded-lg p-8">
+                                <h3 class="text-xl font-bold text-primary mb-4">Frequently Asked Questions</h3>
+                                <div class="space-y-4">
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 mb-1">How quickly do you respond to
+                                            inquiries?</h4>
+                                        <p class="text-sm text-gray-600">We aim to respond to all inquiries within 24
+                                            hours during business days.</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 mb-1">Do you offer phone support?</h4>
+                                        <p class="text-sm text-gray-600">Yes! Our phone support is available Monday
+                                            through Friday, 9 AM to 6 PM EST.</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 mb-1">Can I schedule a meeting with your
+                                            team?</h4>
+                                        <p class="text-sm text-gray-600">Absolutely! Contact us to schedule a
+                                            consultation for business partnerships or enterprise solutions.</p>
+                                    </div>
+                                </div>
+                                <a href="#"
+                                    class="inline-block mt-4 text-primary hover:text-secondary font-semibold">View All
+                                    FAQs →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location/Map Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-5 md:px-15">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Visit Our Office</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Located in the heart of San Francisco's tech district, we're always happy to meet in person.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="grid md:grid-cols-2">
+                        <!-- Map Placeholder -->
+                        <div
+                            class="bg-gradient-to-br from-primary to-secondary p-12 flex items-center justify-center text-white">
+                            <div class="text-center">
+                                <i class="bx bx-map text-6xl mb-4"></i>
+                                <h3 class="text-2xl font-bold mb-2">Interactive Map</h3>
+                                <p class="opacity-90">Integration with Google Maps or similar service would be placed
+                                    here</p>
+                            </div>
+                        </div>
+
+                        <!-- Office Info -->
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-primary mb-6">Office Details</h3>
+
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Address</h4>
+                                    <p class="text-gray-700">123 Digital Avenue, Suite 456</p>
+                                    <p class="text-gray-700">Tech District</p>
+                                    <p class="text-gray-700">San Francisco, CA 94105</p>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Transportation</h4>
+                                    <p class="text-gray-700">• Metro: Montgomery Station (2 blocks)</p>
+                                    <p class="text-gray-700">• Parking: Available in building garage</p>
+                                    <p class="text-gray-700">• Bus Routes: 1, 8, 12, 30, 45</p>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Visitor Information</h4>
+                                    <p class="text-gray-700">Please schedule visits in advance. Bring a valid ID and
+                                        mention your appointment at the front desk.</p>
+                                </div>
+
+                                <button
+                                    class="bg-primary text-white px-6 py-3 rounded-md hover:bg-secondary transition-colors">
+                                    Get Directions
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Categories -->
+        <section class="py-16">
+            <div class="container mx-auto px-5 md:px-15">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">How Can We Help?</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Browse our support categories to find quick answers to common questions.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                        <i class="bx bx-shopping-bag text-4xl text-primary mb-4"></i>
+                        <h3 class="text-lg font-semibold text-primary mb-2">Order Support</h3>
+                        <p class="text-sm text-gray-600 mb-4">Track orders, returns, and shipping information</p>
+                        <a href="#" class="text-primary hover:text-secondary font-semibold">Get Help →</a>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                        <i class="bx bx-credit-card text-4xl text-primary mb-4"></i>
+                        <h3 class="text-lg font-semibold text-primary mb-2">Payment Issues</h3>
+                        <p class="text-sm text-gray-600 mb-4">Billing questions and payment method support</p>
+                        <a href="#" class="text-primary hover:text-secondary font-semibold">Get Help →</a>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                        <i class="bx bx-store text-4xl text-primary mb-4"></i>
+                        <h3 class="text-lg font-semibold text-primary mb-2">Seller Support</h3>
+                        <p class="text-sm text-gray-600 mb-4">Help with selling products and account management</p>
+                        <a href="#" class="text-primary hover:text-secondary font-semibold">Get Help →</a>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                        <i class="bx bx-cog text-4xl text-primary mb-4"></i>
+                        <h3 class="text-lg font-semibold text-primary mb-2">Technical Support</h3>
+                        <p class="text-sm text-gray-600 mb-4">Website issues and technical troubleshooting</p>
+                        <a href="#" class="text-primary hover:text-secondary font-semibold">Get Help →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-primary to-secondary text-white py-12">
+        <div class="container mx-auto px-5 md:px-15">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="footer-column">
+                    <img src="../assets/images/storify-logo.png" alt="Storify Logo"
+                        class="h-12 w-auto mb-4 filter brightness-0 invert">
+                    <p class="text-sm mb-4 text-gray-300">Your trusted digital marketplace for all your shopping needs.
+                        Discover, shop, and sell with confidence.</p>
+                    <div class="flex space-x-3">
+                        <a href="#"
+                            class="bg-white bg-opacity-20 flex items-center justify-center rounded-full p-2 hover:bg-opacity-30 transition-all">
+                            <i class="bxl bx-facebook text-xl text-black"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white bg-opacity-20 flex items-center justify-center rounded-full p-2 hover:bg-opacity-30 transition-all">
+                            <i class="bxl bx-twitter-x text-xl text-black"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white bg-opacity-20 flex items-center justify-center rounded-full p-2 hover:bg-opacity-30 transition-all">
+                            <i class="bxl bx-instagram text-xl text-black"></i>
+                        </a>
+                        <a href="#"
+                            class="bg-white bg-opacity-20 flex items-center justify-center rounded-full p-2 hover:bg-opacity-30 transition-all">
+                            <i class="bxl bx-linkedin text-xl text-black"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
+                        </li>
+                        <li><a href="products.html"
+                                class="text-gray-300 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Categories</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Deals</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition-colors">About Us</a>
+                        </li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Customer Support -->
+                <div class="footer-column">
+                    <h4 class="font-semibold text-lg mb-4">Customer Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Shipping Policy</a>
+                        </li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Returns & Refunds</a>
+                        </li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Payment Methods</a>
+                        </li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Terms & Conditions</a>
+                        </li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-column">
+                    <h4 class="font-semibold text-lg mb-4">Subscribe to Our Newsletter</h4>
+                    <p class="text-sm mb-4 text-gray-300">Stay updated with our latest products and offers.</p>
+                    <form class="flex flex-col space-y-2">
+                        <input type="email" placeholder="Your Email Address"
+                            class="px-4 py-2 border border-slate-300 rounded-md text-foreground focus:outline-none">
+                        <button type="submit"
+                            class="bg-secondary hover:bg-opacity-80 py-2 rounded-md transition-colors hover:bg-white hover:text-primary cursor-pointer">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-white border-opacity-20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-sm text-gray-300 mb-4 md:mb-0">
+                    © 2025 Storify. All rights reserved.
+                </div>
+                <div class="flex space-x-4">
+                    <i class="bxl bx-visa text-3xl"></i>
+                    <i class="bxl bx-mastercard text-3xl"></i>
+                    <i class="bxl bx-paypal text-3xl"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../vendor/js/app.js"></script>
+</body>
+
+</html>
