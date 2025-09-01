@@ -1,4 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Admin sidebar toggle logic
+  const adminSidebar = document.getElementById("admin-sidebar");
+  const adminSidebarToggle = document.querySelector("#sidebar-toggle");
+  const adminNavbar = document.getElementById("admin-navbar");
+  const adminMain = document.getElementById("admin-main");
+  if (adminSidebar && adminSidebarToggle && adminNavbar && adminMain) {
+    adminSidebar.classList.add("transition-all", "duration-300");
+    adminNavbar.classList.add("transition-all", "duration-300");
+    adminMain.classList.add("transition-all", "duration-300");
+    adminSidebarToggle.addEventListener("click", function () {
+      adminSidebar.classList.toggle("sidebar-collapsed");
+      if (adminSidebar.classList.contains("sidebar-collapsed")) {
+        adminNavbar.style.left = "4rem";
+        adminMain.style.marginLeft = "4rem";
+      } else {
+        adminNavbar.style.left = "16rem";
+        adminMain.style.marginLeft = "16rem";
+      }
+    });
+  }
   // Get elements using querySelector to avoid ID conflicts
   const mobileMenuButton = document.querySelector("#mobile-menu-button");
   const closeSidebarButton = document.querySelector("#close-sidebar");
@@ -15,7 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Account dropdown elements
   const accountDropdownButton = document.querySelector("#account-dropdown");
-  const accountDropdownItems = document.querySelector("#account-dropdown-items");
+  const accountDropdownItems = document.querySelector(
+    "#account-dropdown-items"
+  );
 
   // Function to open mobile menu sidebar
   function openMobileSidebar() {
@@ -84,7 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-
   // Event listeners for mobile menu - with null checks
   if (mobileMenuButton) {
     mobileMenuButton.addEventListener("click", openMobileSidebar);
@@ -121,5 +142,4 @@ document.addEventListener("DOMContentLoaded", function () {
   if (accountDropdownButton) {
     accountDropdownButton.addEventListener("click", toggleAccountDropdown);
   }
-
 });
