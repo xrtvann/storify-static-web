@@ -1,6 +1,6 @@
 # Storify - Your Digital Marketplace
 
-Storify is a modern, responsive static web project for an e-commerce platform. It features a clean UI, mobile-first design, and interactive sidebars for navigation and shopping cart functionality. This project is built with Tailwind CSS and vanilla JavaScript, making it easy to customize and extend.
+Storify is a modern, responsive static web project for an e-commerce platform. It features a clean UI, mobile-first design, and interactive sidebars for navigation and shopping cart functionality. This project is built with Tailwind CSS and vanilla JavaScript, making it easy to customize and extend. and more
 
 ## Features
 
